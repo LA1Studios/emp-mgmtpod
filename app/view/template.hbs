@@ -1,0 +1,19 @@
+<h3>View employee</h3>
+<table border="0" width=500 >
+  <tr height=35>
+    <th>ID</th>
+    <th>EID</th>
+    <th>Name</th>
+    <th>Dept</th>
+    <th>Operations<button {{action "delEmpRec" }}>Delete bulk</button>{{firstname}}</th>
+  </tr>
+{{#each model as |viewrec|}}
+<tr height=20>
+  <td>{{viewrec.id}}</td>
+  <td>{{viewrec.eid}}</td> <td> {{viewrec.ename}} </td> <td>{{viewrec.edept}}</td>
+  <td>{{input type="checkbox" name=(if viewrec.id (concat "" viewrec.id))  checked=doDelete}}
+  </td>
+</tr>
+{{/each}}
+
+</table>

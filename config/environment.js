@@ -4,6 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'emp-mgmtpod',
+    podModulePrefix: '',
     environment,
     rootURL: '/',
     locationType: 'auto',
