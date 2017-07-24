@@ -11,7 +11,12 @@
 <tr height=20>
   <td>{{viewrec.id}}</td>
   <td>{{viewrec.eid}}</td> <td> {{viewrec.ename}} </td> <td>{{viewrec.edept}}</td>
-  <td><button {{action "foo" "model-dial"}}>My Button</button>
+  <td><button {{action 'centerMap'}}> Edit</button>
+    {{#modal-dial title=(concat "EMP ID:" viewrec.id)}}
+      This is the content of my modal #1
+
+    {{/modal-dial}}
+
   </td>
 </tr>
 {{/each}}
