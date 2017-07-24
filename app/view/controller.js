@@ -6,8 +6,5 @@ export default Ember.Controller.extend({
     foo() {
       alert("test");
     },
-    save: function() {
-      // save to server
-    }
   }
 });
