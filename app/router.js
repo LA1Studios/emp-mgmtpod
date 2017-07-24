@@ -10,7 +10,6 @@ Router.map(function() {
   this.route('view');
   this.route('add');
   this.route('search');
-  this.route('SettingsModal');
 });
 
 export default Router;
