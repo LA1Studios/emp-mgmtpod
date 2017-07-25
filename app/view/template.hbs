@@ -11,13 +11,39 @@
 <tr height=20>
   <td>{{viewrec.id}}</td>
   <td>{{viewrec.eid}}</td> <td> {{viewrec.ename}} </td> <td>{{viewrec.edept}}</td>
-  <td><button {{action 'centerMap' viewrec.id}}> Edit</button>
+  <td><button {{action 'showModal' viewrec.id viewrec.eid viewrec.ename viewrec.edept}}> Edit</button>
   </td>
 </tr>
 {{/each}}
 </table>
 
-
-{{#modal-dial title=(concat "EMP ID:" viewrec.id)}}
-  {{viewrec.ename}}
+{{#if isVisible}}
+{{#modal-dial title=(concat "EMP ID:" currentId) empid=viewrec.id}}
+  <h3>Edit employee</h3>
+  <br><form class="form-horizontal" >
+    <div class="form-group">
+      <label for="name" class="col-md-2 control-label">Enter employee ID</label>
+      <div class="col-md-5">
+        {{input value=eId class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name" class="col-md-2 control-label">Enter employee name</label>
+      <div class="col-md-5">
+        {{input value=eName class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name" class="col-md-2 control-label">Enter employee dept</label>
+      <div class="col-md-5">
+        {{input value=eDept class="form-control"}}
+      </div>
+    </div>
+    <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-10">
+       <button class="btn btn-primary btn-lg btn-block" data-dismiss="modal" {{action 'editEmpRec' currentId}} >Add employee</button>
+     </div>
+   </div>
+  </form>
 {{/modal-dial}}
+{{/if}}
