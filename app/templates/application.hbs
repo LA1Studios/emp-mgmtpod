@@ -1,5 +1,14 @@
-{{#link-to "view"}}View{{/link-to}}<br><br>
-{{#link-to "add"}}Add{{/link-to}}<br><br>
-{{#link-to "search"}}Search{{/link-to}}<br><br>
+<h1>Employee managment</h1><br>
+<ul class="nav nav-tabs">
+   {{#link-to "view" tagName='li' href=false}}
+      {{#link-to "view"}}View{{/link-to}}
+    {{/link-to}}
+    {{#link-to "add" tagName='li' href=false}}
+       {{#link-to "add"}}Add{{/link-to}}
+     {{/link-to}}
+     {{#link-to "search" tagName='li' href=false}}
+        {{#link-to "search"}}Search{{/link-to}}
+      {{/link-to}}
+</ul>
 {{outlet}}
 {{outlet 'modal'}}

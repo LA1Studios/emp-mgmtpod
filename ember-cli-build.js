@@ -7,7 +7,10 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
   });
-
+  app.import('vendor/jquery-2.1.0.js');
+  app.import('vendor/ember.prod.js');
+  app.import('vendor/bootstrap.css');
+  app.import('vendor/bootstrap.js');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
